@@ -3,10 +3,10 @@ function getRandomInt() {
   }
 // timestamp = Math.round(+new Date() / 1000);
 
-displayHumanResult = 9;
-displayComputerResult = 9;
-playerScore = 0;
-computerScore = 0;
+let displayHumanResult,
+    displayComputerResult,
+    playerScore = 0,
+    computerScore = 0;
 
 function start(){
     document.getElementById("game-start").removeAttribute("class");
@@ -18,7 +18,6 @@ function start(){
 function game(e){
     e.preventDefault();
     player = playerMove();
-    //displayHumanResult = displayResult(player);
     document.getElementById("choice-player").innerHTML = displayHumanResult;
     computer = getRandomInt();
     displayComputerResult = displayResult(computer);
@@ -35,6 +34,10 @@ function displayResult(e){
         return ("Feuille")
     } else if (e === 2) {
         return ("Ciseaux")
+    /*} else if (e === 3) {
+        return ("Lézard")
+    } else if (e === 4) {
+        return ("Spock")*/
     } else {
         alert("error")
     }
@@ -42,6 +45,7 @@ function displayResult(e){
 
 function playerMove(){
     let player = Number(document.querySelector('input[name="choice"]:checked').value);
+    displayHumanResult = displayResult(player);
     return player;
 }
 
@@ -52,20 +56,17 @@ function result() {
         case "00":
         case "11":  
         case "22":  
-        alert("Match nul");
             winner = tie;
             break;
         case "01":
         case "12": 
         case "20":   
-        alert("Victoire PC");
             winner = "Ordinateur"
             computerScore ++;
             break;        
         case "02":
         case "10":
         case "21":
-            alert("Victoire HUMAIN");    
             winner = userName;
             playerScore ++;
             break;
@@ -73,8 +74,6 @@ function result() {
           alert("Je n'ai pas compris !");
       }
     document.getElementById("winner").innerHTML = winner;
+    document.getElementById("score-human").innerHTML = playerScore;
+    document.getElementById("score-computer").innerHTML = computerScore;
     }
-
-
-document.getElementById("score-human").innerHTML = playerScore;
-document.getElementById("score-computer").innerHTML = computerScore;
