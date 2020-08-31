@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Jouons !</title>
+</head>
+<body>
+    <div class="container">
+        <header></header>
+        <div>
+            Lancer une partie ! <span onclick="start()">(+)</span>
+        </div>
+
+        <div id="game-start" class="hidden">
+            <p> 
+                Bonjour <span class="choice" id="user-name"></span> choisis entre : 
+                <form>
+                    <input type="radio" name="choice" value=0 id="rock" /> <label for="rock">Pierre</label><br />
+                    <input type="radio" name="choice" value=1 id="paper" /> <label for="paper">Feuille</label><br />
+                    <input type="radio" name="choice" value=2 id="scissors" /> <label for="scissors">Ciseaux</label><br />
+                    <!--
+                    <input type="radio" name="choice" value="pierre" id="rock" /> <label for="rock">Pierre</label><br />
+                    <input type="radio" name="choice" value="feuille" id="paper" /> <label for="paper">Feuille</label><br />
+                    -->
+                </br><button type="submit" onclick="game()">Envoyer</button>
+                </form>               
+            </p>
+        </div>
+
+        <div  class="game">
+            <p>
+                Vous avez choisi <span class="choice" id="choice-player">...</span>
+            </p>
+            <p>
+                L'ordinateur quant à lui choisi <span class="choice" id="choice-computer">...</span>
+            </p>
+            <p>
+                Cette manche a été remportée par <span id="winner">???</span>
+            </p>
+            <p>
+                Votre score est de <span id="score-human">0</span> points. </br>
+                Le score de l'ordinateur est de <span id="score-computer">0</span> points.
+            </p>
+        </div>
+
+        <div>
+            <a href="index.html">Revenir au menu</a>
+        </div>
+        <footer></footer>
+    </div>
+<script src="scripts.js"></script>
+</body>
+</html>
