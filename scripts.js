@@ -15,7 +15,8 @@ function start(){
 }
 
 // DEROULEMENT DE LA PARTIE LE GESTIONNAIRE
-function game(){
+function game(e){
+    e.preventDefault();
     player = playerMove();
     //displayHumanResult = displayResult(player);
     document.getElementById("choice-player").innerHTML = displayHumanResult;
@@ -24,6 +25,8 @@ function game(){
     document.getElementById("choice-computer").innerHTML = displayComputerResult;
     result();
 }
+
+document.getElementById("game-button").addEventListener("click", game)
 
 function displayResult(e){
     if (e === 0){
