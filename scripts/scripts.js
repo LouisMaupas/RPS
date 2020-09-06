@@ -11,7 +11,7 @@ let displayHumanResult,
 let gameButton = document.getElementById("game-button"); 
 //gameButton.addEventListener("click", game());
 let startButton = document.getElementById("start-button");
-startButton.addEventListener("click", start());
+startButton.addEventListener("click", start);
 
 function start(e){
     e.preventDefault();
