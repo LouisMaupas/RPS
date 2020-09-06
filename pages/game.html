@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <title>Jouons !</title>
+</head>
+<body>
+
+    <div class="container">       
+        <div id="header"><header>
+            <h1>Pierre, papier, ciseaux, lézard, Spock !</h1>
+        </header></div>
+        <div>
+            <button id="start-button">Lancer une partie !</button>
+        </div>
+
+        <div id="game-start" class="hidden">
+            <p> 
+                Bonjour <span class="choice" id="user-name"></span> choisis entre : 
+                <form>
+                    <img src="../ressources/rock.png"> <input type="radio" name="choice" value=0 id="rock" /> <label for="rock">Pierre</label><br />
+                    <img src="../ressources./paper.png"> <input type="radio" name="choice" value=1 id="paper" /> <label for="paper">Feuille</label><br />
+                    <img src="../ressources./scissor.png"> <input type="radio" name="choice" value=2 id="scissors" /> <label for="scissors">Ciseaux</label><br />
+                    <input disabled type="radio" name="choice" value="3" id="lizard" /> <label for="lizard">Lézard</label><br />
+                    <input disabled type="radio" name="choice" value="4" id="spock" /> <label for="spock">Spock</label><br />
+                </br><button disabled type="submit" id="game-button">Envoyer</button>
+                </form>               
+            </p>
+        </div>
+
+        <div  class="game">
+            <p>
+                Vous avez choisi <span class="choice" id="choice-player">...</span>
+            </p>
+            <p>
+                L'ordinateur quant à lui choisi <span class="choice" id="choice-computer">...</span>
+            </p>
+            <p>
+                Cette manche a été remportée par <span id="winner">???</span>
+            </p>
+            <p>
+                Votre score est de <span id="score-human">0</span> points. </br>
+                Le score de l'ordinateur est de <span id="score-computer">0</span> points.
+            </p>
+        </div>
+
+        <div>
+            <a href="../index.html">Revenir à l'accueil</a>
+        </div>
+        <footer></footer>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+<script src="../scripts/vue.js"></script>
+<script src="../scripts/scripts.js"></script>
+</body>
+</html>
